@@ -43,7 +43,7 @@ jobs:
         with:
           test-name: Test 1
           setup-command: ''
-          command: "timeout 0.3 ./median tests/input1.txt"
+          command: "timeout 0.3 ./build/median tests/input1.txt"
           input: ""
           expected-output: "1 2 3"
           comparison-method: exact
@@ -55,7 +55,7 @@ jobs:
         with:
           test-name: Test 2
           setup-command: ''
-          command: "timeout 0.3 ./median tests/input2.txt"
+          command: "timeout 0.3 ./build/median tests/input2.txt"
           input: ""
           expected-output: "3 2 1"
           comparison-method: exact
@@ -67,7 +67,7 @@ jobs:
         with:
           test-name: Test 3
           setup-command: ''
-          command: "timeout 0.3 ./median tests/input3.txt"
+          command: "timeout 0.3 ./build/median tests/input3.txt"
           input: ""
           expected-output: "1 5 9"
           comparison-method: exact
@@ -79,7 +79,7 @@ jobs:
         with:
           test-name: Test 4
           setup-command: ''
-          command: "timeout 0.3 ./median tests/input4.txt"
+          command: "timeout 0.3 ./build/median tests/input4.txt"
           input: ""
           expected-output: "5 1 2"
           comparison-method: exact
@@ -91,7 +91,7 @@ jobs:
         with:
           test-name: Test 5
           setup-command: ''
-          command: "timeout 0.3 ./median tests/input5.txt"
+          command: "timeout 0.3 ./build/median tests/input5.txt"
           input: ""
           expected-output: "1 5 4"
           comparison-method: exact
@@ -103,7 +103,7 @@ jobs:
         with:
           test-name: Test 6
           setup-command: ''
-          command: "timeout 0.3 ./median tests/input6.txt"
+          command: "timeout 0.3 ./build/median tests/input6.txt"
           input: ""
           expected-output: "56 5910 2350"
           comparison-method: exact
@@ -115,7 +115,7 @@ jobs:
         with:
           test-name: Test 7
           setup-command: ''
-          command: "timeout 0.3 ./median tests/input7.txt"
+          command: "timeout 0.3 ./build/median tests/input7.txt"
           input: ""
           expected-output: "494 49845 56591"
           comparison-method: exact
@@ -135,7 +135,7 @@ jobs:
           runners: test-1,test-2,test-3,test-4,test-5,test-6,test-7
       - name: Memory leaks
         run: |
-             valgrind --tool=memcheck --leak-check=full --undef-value-errors=no --error-exitcode=111 ./median tests/input7.txt
+             valgrind --tool=memcheck --leak-check=full --undef-value-errors=no --error-exitcode=111 ./build/median tests/input7.txt
       - name: Checkout
         uses: actions/checkout@v4
       - name: CPD
